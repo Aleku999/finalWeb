@@ -7,19 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p>    Contador de visitas por pagins        </p>
-    <div class="lista-productos">
-{{#each listaProductos}}
-    <article class="lista-productos__item producto">
-        <img src="">
-        <h1 class="producto__titulo"> {{titulo}} </h1>
-          <p class="producto__precio"> {{this.precio}} </p>
-        <a href="/{{titulo}}">Ver más</a>
-       
-    </article>
-    {{/each}}
+    <h1>Home</h1>
 
-    </div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+         <li><a href="/contacto">contacto</a></li>
+          <li><a href="/info">Info</a></li>
+           <li><a href="/admin">Admin</a></li>
+    </ul>
 
 </body>
 </html>

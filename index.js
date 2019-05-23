@@ -14,51 +14,65 @@ app.engine('handlebars', renderMotor());
 
 var fs = require ('fs');
 
-var productos = [];
-productos.push({ 
-  titulo: 'Perro',
-  precio: '20000',
-  imagen: "",
-  descripcion: '',
+var visitas = {};
+
+visitas.general = [];
+
+visitas.registro = [];
+
+fs.readFile(__dirname + '/registro.txt', (err, data) => {
+    if (err) {
+
+    } else {
+        visitas = JSON.parse(data);
+    }
+
+});
+
+
+app.get('/', function (request, response) {
+    response.render('index', { layout: false });
+    contarVisitas("index");
+});
+
+app.get('/contacto', function (request, response) {
+    response.render('page', { layout: false });
+    contarVisitas("page");
+});
+app.get('/info', function (request, response) {
+    response.render('info', { layout: false });
+    contarVisitas("info");
+});
+app.get('/admin', function (request, response) {
+    response.render('admin', { layout: false, visitas:visitas});
+});
+
+
+function contarVisitas(url) {
+    if (visitas.general.length != 0) {
+        let encontrado = false;
+        visitas.general.forEach((vis, index) => {
+            if (vis.url == url) {
+                vis.visitas++;
+                let vist = vis.visitas;
+                encontrado = true;
+                visitas.registro.push({ url: url, visitas: vist, fecha: new Date() });
+            }
+        });
+
+
+        if (encontrado == false) {
+            visitas.general.push({ url: url, visitas: 1, fecha: new Date() });
+            visitas.registro.push({ url: url, visitas: 1, fecha: new Date() });
+        }
+
+    } else {
+        visitas.general.push({ url: url, visitas: 1, fecha: new Date() });
+        visitas.registro.push({ url: url, visitas: 1, fecha: new Date() });
+    }
+
+    fs.writeFile('registro.txt', JSON.stringify(visitas), 'utf8', function () { });
 }
-
-);
-productos.push({
-  titulo: 'Gato',
-  precio: '19220',
-  imagen: "",
-  descripcion: '',
-});
-productos.push({
-    titulo: 'Hamster',
-    precio: '2000',
-    imagen: "",
-    descripcion: '',
-  });
-
-  
-app.get('/', function(request,response){
-    var contexto = {
-        titulo: 'Productos',
-        listaProductos: productos,
-        layout:false
-      };
-    response.render('index',contexto);
-    
-});
-app.get('/:producto', function(req,res){
-    var contexto={ layout:false};
-    productos.forEach(function(producto){
-  
-      if(producto.titulo == req.params.producto){
-        contexto.producto;
-      }
-    });
- 
-      res.render('page',contexto);
-    
-    
-  });
 
   
 app.listen(4000, function() {
