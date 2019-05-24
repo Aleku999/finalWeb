@@ -1,3 +1,10 @@
+
+/*
+Integrantes:
+Sebastian Garcia Posso
+Alejandro Salazar Balcazar
+*/
+
 var express = require('express');
 
 var app = express();
@@ -35,11 +42,11 @@ app.get('/', function (request, response) {
     contarVisitas("index");
 });
 
-app.get('/contacto', function (request, response) {
+app.get('/sobrenosotros', function (request, response) {
     response.render('page', { layout: false });
     contarVisitas("page");
 });
-app.get('/info', function (request, response) {
+app.get('/contacto', function (request, response) {
     response.render('info', { layout: false });
     contarVisitas("info");
 });
