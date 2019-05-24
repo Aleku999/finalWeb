@@ -17,7 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'handlebars');
 
-app.engine('handlebars', renderMotor());
+app.engine('handlebars', renderMotor({
+    defaultLayout:false,
+}));
 
 var fs = require ('fs');
 
@@ -38,20 +40,20 @@ fs.readFile(__dirname + '/registro.txt', (err, data) => {
 
 
 app.get('/', function (request, response) {
-    response.render('index', { layout: false });
+    response.render('index');
     contarVisitas("index");
 });
 
 app.get('/sobrenosotros', function (request, response) {
-    response.render('page', { layout: false });
+    response.render('page');
     contarVisitas("page");
 });
 app.get('/contacto', function (request, response) {
-    response.render('info', { layout: false });
+    response.render('info');
     contarVisitas("info");
 });
 app.get('/admin', function (request, response) {
-    response.render('admin', { layout: false, visitas:visitas});
+    response.render('admin');
 });
 
 

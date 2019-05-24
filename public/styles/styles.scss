@@ -63,6 +63,13 @@ p{
     //background-image: url("./imagenes/veteri.jpg");
     display: flex;
 }
+.banner__perrito{
+    width: 930px;
+   height: 513px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../imagenes/perrito.jpg");
+}
 
 .cont__blank-left{
    width: 10%;
@@ -90,4 +97,26 @@ p{
         font-size: 25px;
         padding-top: 20px;
     }
+ }
+
+ .cont__aboutus{
+     width: 100%;
+     height: 100vh;
+     display: flex;
+   
+     justify-content: center;
+     padding-top: 50px;
+ }
+ .cont__aboutus h1{
+  font-size: 40px; 
+}
+ 
+ .cont__aboutus p{
+  font-size: 25px;
+    padding-top: 30px; 
+}
+
+ .aboutus__us{
+     width: 30%;
+     height: 100%;
  }
