@@ -123,8 +123,12 @@ p{
 
  .contacto{
      display: flex;
-     margin-left: 30%;
+     margin-left: 20%;
+     margin-top: 3%;
 
+     &__form{
+         margin-right: 10%;
+     }
      &__gato{
          width: 700px;
          height: 700px;
@@ -133,3 +137,25 @@ p{
         background-size: cover;
      }
  }
+ .enviar{
+     height: 40px;
+     margin-top: 3%;
+ }
+ .formu{
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    margin-left: -20%;
+}
+.bloque{
+    margin-top: 10%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+.info{
+    border: none;
+    border-bottom: 1px solid    #2D2D2D;;
+    width: 200%;
+    
+    align-self: center;
+}
