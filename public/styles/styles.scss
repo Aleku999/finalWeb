@@ -120,3 +120,16 @@ p{
      width: 30%;
      height: 100%;
  }
+
+ .contacto{
+     display: flex;
+     margin-left: 30%;
+
+     &__gato{
+         width: 700px;
+         height: 700px;
+        background-image: url("../imagenes/gato.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+     }
+ }

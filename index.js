@@ -53,7 +53,8 @@ app.get('/contacto', function (request, response) {
     contarVisitas("info");
 });
 app.get('/admin', function (request, response) {
-    response.render('admin');
+    let contexto = { layout: false, visitas: visitas };
+    response.render("admin", contexto);
 });
 
 
