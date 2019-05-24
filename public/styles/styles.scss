@@ -156,6 +156,71 @@ p{
     border: none;
     border-bottom: 1px solid    #2D2D2D;;
     width: 200%;
+}
+.title-admin{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+.lista{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
     
-    align-self: center;
+    list-style: none;
+    text-decoration: none;
+
+    &__paginas{
+        margin-top: 5%;
+        
+    text-decoration: none;
+    }
+}
+
+.primero{
+    display: flex;
+    &__nombre{
+        color: white;
+    width: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 40px;
+    background-color: #2D2D2D;
+    }
+    &__url{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    
+}
+.segundo{
+    display: flex;
+    &__visitas{
+        color: white;
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: #2D2D2D;
+    }
+    &__numero{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+}
+.tercero{
+    display: flex;
+    &__fecha{
+        color: white;
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: #2D2D2D;
+    }
+    &__numero{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    
 }

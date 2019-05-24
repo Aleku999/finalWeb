@@ -22,14 +22,28 @@
             </ul>
         </div>
     </div>
-
-    <ul>
+    <h2 class="title-admin">NÚMERO DE VISITAS POR DÍA</h2>
+    <ul class="lista">
 
           {{#each visitas.general}}
-        <li >
-            <div> Nombre: {{url}}</div>
-            <div>Número de visitas: {{visitas}}</div>
-            <div>Última fecha de ingreso: {{fecha}} </div>
+        <li class="lista__paginas">
+            <div class="primero">
+                <div class="primero__nombre"><p> Nombre</p></div>
+                <div class="primero__url">
+                    <p>  {{url}} </p>
+                </div>
+            </div>
+            <div class="segundo">
+                <div class="segundo__visitas">
+                    <p>Número de visitas:</p>
+                </div>
+                <div class="segundo__numero"> <p> {{visitas}}</p></div>
+            </div>
+            <div class="tercero" >
+                <div class="tercero__fecha"> <p>Última fecha de ingreso:</p></div>
+                <div class="tercero__numero"> <p> {{fecha}} </p></div>
+            </div>
+            
         </li>
         {{/each}}
     </ul>
